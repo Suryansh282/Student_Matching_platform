@@ -25,6 +25,10 @@ This project is a web-based application designed to help students find compatibl
 ---
 
 ## Installation
+### Prerequisites
+
+- Python 3.8 or higher
+- pip (Python package manager)
 
 Follow these steps to set up the project on your local machine:
 
@@ -33,3 +37,78 @@ Follow these steps to set up the project on your local machine:
 ```bash
 git clone https://github.com/your-username/student-matching-app.git
 cd student-matching-app
+```
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Prepare the ML Model
+Ensure the K-Means model (kmeans_model.pkl), scaler (scaler.pkl), and encoder (mlb.pkl) are trained and available in the project directory.
+If you don't have the models, run the training script in the model_training directory (if provided)
+
+### 5. Run the Application
+```bash
+python app.py
+```
+Open a browser and navigate to http://127.0.0.1:5000/.
+
+---
+
+## Algorithm Used: K-Means Clustering
+
+### Overview
+
+K-Means clustering is an unsupervised learning algorithm used to group similar data points into clusters. For this project:
+
+### Features Used
+
+- **Encoded Subjects**: Transformed using `MultiLabelBinarizer`.
+- **Average Study Hours**: Scaled using `StandardScaler`.
+- **Study Goals**: Numerically mapped for compatibility.
+
+### Steps
+
+1. **Data Preprocessing**:
+   - Encode subjects into numerical format.
+   - Scale study hours to normalize the values.
+   - Impute missing values to handle incomplete data.
+
+2. **Model Training**:
+   - Train the K-Means model with 3 clusters (selected based on experimentation).
+
+3. **Cluster Assignment**:
+   - Assign each student to a cluster based on their feature vector.
+
+4. **Matching**:
+   - Match new students with others in the same cluster to ensure compatibility.
+
+### Why K-Means?
+
+- **Efficiency**: K-Means is computationally efficient for handling large datasets.
+- **Clarity**: It effectively segments students into distinct groups based on the provided features.
+- **Simplicity**: The algorithm's simplicity makes it suitable for real-time applications like this project.
+
+---
+
+### Demo
+
+**Home Page:**
+
+![Home Page](static/images/screenshot1.png)
+
+**Results Page:**
+
+![Results Page](static/images/screenshot2.png)
+
+
+
