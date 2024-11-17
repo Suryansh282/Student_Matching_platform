@@ -35,8 +35,8 @@ Follow these steps to set up the project on your local machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/student-matching-app.git
-cd student-matching-app
+git clone https://github.com/your-username/student_matching_platform.git
+cd student_matching_platform
 ```
 
 ### 2. Create a Virtual Environment
@@ -52,13 +52,36 @@ source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 pip install -r requirements.txt
 ```
 
-### 4. Prepare the ML Model
+## 4. Usage
+
+1. Prepare a JSON file with student data structured as follows:
+    ```json
+    [
+        {
+            "name": "Suryansh",
+            "subjects": ["math", "Physics"],
+            "study_hours": [10, 12],
+            "goals": "Exam preparation"
+        },
+        
+    ]
+    ```
+
+2. Run the main script or notebook to train the model:
+    ```bash
+    python kmeans_model_new.py
+    ```
+
+3. View or modify the `find_matching_students()` function to input a new student profile and find matches.
+
+
+### 5. Prepare the ML Model
 Ensure the K-Means model (kmeans_model.pkl), scaler (scaler.pkl), and encoder (mlb.pkl) are trained and available in the project directory.
 If you don't have the models, run the training script in the model_training directory (if provided)
 
-### 5. Run the Application
+### 6. Run the Application
 ```bash
-python app.py
+python appNew.py
 ```
 Open a browser and navigate to http://127.0.0.1:5000/.
 
