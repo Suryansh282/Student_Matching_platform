@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Study Partners</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Find Study Partners</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="subjects">Subjects (comma-separated)</label>
+                <input type="text" class="form-control" id="subjects" name="subjects" required>
+            </div>
+            <div class="form-group">
+                <label for="study_hours">Study Hours (comma-separated)</label>
+                <input type="text" class="form-control" id="study_hours" name="study_hours" required>
+            </div>
+            <div class="form-group">
+                <label for="goals">Goal</label>
+                <select class="form-control" id="goals" name="goals">
+                    <option value="Exam preparation">Exam preparation</option>
+                    <option value="Assignments">Assignments</option>
+                    <option value="Concept review">Concept review</option>
+                    <option value="Project work">Project work</option>
+                    <option value="Homework">Homework</option>
+                    <option value="Practice">Practice</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Find Partners</button>
+        </form>
+    </div>
+</body>
+</html>

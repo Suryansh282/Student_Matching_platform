@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Study Partners</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Matching Study Partners</h2>
+        <ul class="list-group">
+            {% for student in matches %}
+                <li class="list-group-item">
+                    <strong>Name:</strong> {{ student.name }}<br>
+                    <strong>Subjects:</strong> {{ student.subjects | join(', ') }}<br>
+                    <strong>Study Hours:</strong> {{ student.study_hours }}<br>
+                    <strong>Goals:</strong> {{ student.goals }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="btn btn-primary mt-3">Search Again</a>
+    </div>
+</body>
+</html>
