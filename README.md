@@ -134,4 +134,7 @@ K-Means clustering is an unsupervised learning algorithm used to group similar d
 ![Results Page](static/images/screenshot2.png)
 
 
+## Documentation
+
+Detailed documentation is available [here](https://suryansh282.github.io/Student_Matching_platform/).
 
